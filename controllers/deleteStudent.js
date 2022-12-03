@@ -7,7 +7,7 @@ const deleteStudent = async (req, res) => {
         const student = await studentSchema.findById(req.params.studentId);
         const { mentorAssigned } = student
         if (mentorAssigned === "unAssigned") {
-            await studentSchema.findByIdAndDelete(req.params.id)
+            await studentSchema.findByIdAndDelete(req.params.studentId)
             res.json({
                 message: "Student Delete successfull",
                 statusCode: 200,
